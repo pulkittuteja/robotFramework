@@ -1,0 +1,42 @@
+TC#,TC101,TC102,TC103,TC104,TC105,TC106,TC107,TC108,TC109,TC110,TC111
+Description,Create New Sub-Budget from ibudget with Generic Resources,Create New Sub-Budget from ibudget with different Resource Exceptions,Create New Sub-Budget from ibudget with different Contract Currency,Create New Sub-Budget from ibudget with discounts,Create New Sub-Budget from ibudget with Contractors,Create new sub-budget from Assiatant under main,Create new sub-budget from Assistant,Copy New sub-budget,Create New Unit-Value sub-Budget ,Create New Sub-Budget from ibudget with different Resource Exceptions,Create New Sub-Budget from ibudget with different Resource Exceptions
+Project Description,New Test Sub-Budget,New Test Sub-Budget,New Test Sub-Budget,New Test Sub-Budget,New Test Sub-Budget,New Test Linked Sub-Budget,New Test Sub-Budget,New Copy Sub-Budget,New Test Linked Sub-Budget,New Test Sub-Budget,New Test Sub-Budget
+Client,AA iManage QA Test,AA iManage QA Test,AA iManage QA Test,AA iManage QA Test,AA iManage QA Test,AA iManage QA Test,,,AA iManage QA Test,AA iManage QA Test,AA iManage QA Test
+BU,200 - United States,200 - United States,310 - Canada,310 - Canada,200 - United States,200 - United States,,,200 - United States,200 - United States,310 - Canada
+EMD,"Shaikh, Samina","Shaikh, Samina","Shaikh, Samina","Shaikh, Samina","Shaikh, Samina","Shaikh, Samina",,,"Shaikh, Samina","Shaikh, Samina","Shaikh, Samina"
+EM,"Colgan, Justin","Colgan, Justin","Colgan, Justin","Colgan, Justin","Colgan, Justin","Colgan, Justin",,,"Colgan, Justin","Colgan, Justin","Colgan, Justin"
+Service Offering,Innovation as a Service,Innovation as a Service,Innovation as a Service,Innovation as a Service,Innovation as a Service,Corporate Performance Mgmt,,,Corporate Performance Mgmt,Innovation as a Service,Innovation as a Service
+Rate Card Type,Hourly,Hourly,Hourly,Unit/Value-Based,Hourly,Unit/Value-Based,Hourly,,Unit/Value-Based,Hourly,Hourly
+Project Department,,,,"Toronto, Canada - 13100","Tampa, FL - 10090",,,,,,
+Contract Currency,,,GBP,AUD,AUD,AUD,,,,AUD,AUD
+Contract rate Type,Contract Rate1,Contract Rate1,Contract Rate1,Contract Rate1,Contract Rate1,,Contract Rate1,,,Contract Rate1,Contract Rate1
+Unit-Based CR Count,,,,2,,3,,,,,
+Unit-Based CR,,,,Unit Based Contract Rate1;Unit Based Contract Rate2,,Unit Based Contract Rate1;Unit Based Contract Rate2;Unit Based Contract Rate3,,,,,
+Contract Rate Count,,1,,,1,,1,,,1,3
+Contract Rate,,Contract Rate Card Exceptions1,,,Contract Rate Card Exceptions1,,Contract Rate Card Exceptions1,,,Contract Rate Card Exceptions1,"Contract Rate Card Exceptions1,Contract Rate Card Exceptions2,Contract Rate Card Exceptions3"
+MF/IBU Contract Rate Count,,1,,,1,,,,,1,1
+MF/IBU Contract Rate,,MF/IBU Contract Rate card Exceptions1,,,MF/IBU Contract Rate card Exceptions1,,,,,MF/IBU Contract Rate card Exceptions1,MF/IBU Contract Rate card Exceptions1
+Employee Labor Count,,1,2,,,1,,,,1,2
+Employee Labor,,Employee Labor1,Employee Labor1;Employee Labor3,,,Employee Labor1,,,,Employee Labor1,Employee Labor1;Employee Labor3
+RH Contractor Labor Count,,,,2,1,,,2,,,
+RH Contractor Labor,,,,RH Contractor Labor1;RH Contractor Labor2,RH Contractor Labor1,,,RH Contractor Labor1;RH Contractor Labor2,,,
+IH Contractor Labor Count,,,2,2,2,,,,,2,1
+IH Contractor Labor,,,IH Contractor labor1;IH Contractor labor2,IH Contractor labor1;IH Contractor labor2,IH Contractor labor1;IH Contractor labor2,,,,,IH Contractor labor1;IH Contractor labor2,IH Contractor labor1
+MF Labor Count,,,,,,1,,,,1,2
+MF Labor,,,,,,MF Labor1,,,,MF Labor1,MF Labor1;MF Labor2
+IBU Labor Count,,,,,,1,,,,1,
+IBU Labor,,,,,,IBU Labor1,,,,IBU Labor1,IBU Labor1
+Volume Discount,,,,,,-4000,,,,,
+Adjustments,,,,,,-5000,,,,,
+EMP Expenses Count,,1,,,,1,,,,1,1
+EMP Expenses,,EMP Expenses1,,,,EMP Expenses1,,,,EMP Expenses1,EMP Expenses1
+RHC Expenses Count,,,,,,,,,,,
+RHC Expenses,,,,,,,,,,,
+IHC Expenses Count,,,,,,,,,,,
+IHC Expenses,,,,,,,,,,,
+MF Expenses Count,,,1,,,1,,,,,
+MF Expenses,,,MF Expenses1,,,MF Expenses1,,,,,
+IBU Expenses Count,,,1,,,,,,,,
+IBU Expenses,,,IBU Expenses1,,,,,,,,
+OFC Count,,2,3,,2,3,,,,,
+OFC,,OFC1;OFC2,OFC1;OFC2;OFC3,,OFC1;OFC2,OFC1;OFC2;OFC3,,,,,

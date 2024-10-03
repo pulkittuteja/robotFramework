@@ -1,0 +1,83 @@
+TC#,ERA001,ERA002,ERA003
+TEST SCENARIO,ERA with Normal Rating,ERA with Increased Rating,ERA with High Rating
+name,Test Draft Opportunity,Test Draft Opportunity,Test Draft Opportunity
+isNewClient,FALSE,FALSE,FALSE
+isPciEngagement,FALSE,FALSE,FALSE
+isFinancialModelEngagement,FALSE,FALSE,FALSE
+isDueDillgenceEngagement,FALSE,FALSE,FALSE
+isSocialEngineeringEngagement,FALSE,FALSE,FALSE
+isLoanStaff,FALSE,FALSE,FALSE
+isSoftwareResell,FALSE,FALSE,FALSE
+isCrossBorderTravel,FALSE,FALSE,FALSE
+isGovernmentEngagement,FALSE,FALSE,FALSE
+isContractorUsed,FALSE,FALSE,FALSE
+ClientID,4b38b466-7590-4da6-e0c3-08d5e2c3cd78,4b38b466-7590-4da6-e0c3-08d5e2c3cd78,4b38b466-7590-4da6-e0c3-08d5e2c3cd78
+clientSize,$11 Million - $50 Million,$11 Million - $50 Million,$11 Million - $50 Million
+clientLegalStructure,"Private - Partnership, LLC, Family Owned","Private - Partnership, LLC, Family Owned","Private - Partnership, LLC, Family Owned"
+Engagement Description,Anything Here,Anything Here,Anything Here
+principalCountryJobCreated,United States,United States,United States
+principalCountryWorkPerformed,United States,United States,United States
+isConfidential,FALSE,FALSE,FALSE
+engagementManagingDirectorId,21363178-8acc-44ec-8925-c6a7b4296ede,21363178-8acc-44ec-8925-c6a7b4296ede,21363178-8acc-44ec-8925-c6a7b4296ede
+engagementManagerId,a1b8965e-c90a-477a-933a-83a08f79020f,a1b8965e-c90a-477a-933a-83a08f79020f,a1b8965e-c90a-477a-933a-83a08f79020f
+GLMD,Y,Y,Y
+RMD,Y,Y,Y
+isMsaRequired,TRUE,TRUE,TRUE
+isSowRequired,NULL,NULL,NULL
+estimatedDuration,2,2,2
+estimatedNetFees,2,2,2
+estimatedContributionMargin,0.25,0.25,0.25
+q1a,0;0;0,0;0;0,0;0;0
+q1b,1;0;0,1;0;0,1;0;0
+q2,1;0;0,1;0;0,2;0;0
+q3,1;0;0,1;0;0,2;0;0
+q4a,2;0;0,2;0;0,1;2;0
+q4a1,0;0;0,0;0;0,0;0;0
+q4a2,0;0;0,0;0;0,0;0;0
+q4a3,0;0;0,0;0;0,0;0;0
+q4b,1;0;0,2;1;2,1;2;1
+q4c,0;0;0,0;0;0,0;0;0
+q5,1;0;0,1;0;0,5;0;0
+q6a,1;0;0,1;0;0,2;0;0
+q6b,1;0;0,1;0;0,2;0;0
+q6c,0;0;0,0;0;0,0;0;0
+q6d,0;0;0,0;0;0,0;0;0
+q7,1;0;0,1;0;0,2;0;0
+q8a,0;0;0,0;0;0,0;0;0
+q8b,0;0;0,0;0;0,0;0;0
+q9,1;0;0,1;0;0,2;0;0
+q10,1;0;0,1;0;0,2;0;0
+q11a,1;0;0,1;0;0,2;0;0
+q11b,1;0;0,1;0;0,2;0;0
+q11c,1;0;0,1;0;0,2;0;0
+q12,0;0;0,0;0;0,0;0;0
+q13,1;0;0,1;0;0,2;0;0
+q14,0;0;0,0;0;0,0;0;0
+q15,1;0;0,1;0;0,2;0;0
+q16a,0;0;0,0;0;0,0;0;0
+q16a1,1;0;0,1;0;0,2;0;0
+q16a2,1;0;0,1;0;0,2;0;0
+q16a3,1;0;0,1;0;0,2;0;0
+q16a4,1;0;0,1;0;0,2;0;0
+q16a5,1;0;0,1;0;0,2;0;0
+q16a6,1;0;0,1;0;0,2;0;0
+q16b,1;0;0,1;0;0,2;0;0
+q17a,1;0;0,1;0;0,2;0;0
+q17b,1;0;0,1;0;0,2;0;0
+q18,1;0;0,1;0;0,2;0;0
+q19,0;0;0,0;0;0,0;0;0
+q20,1;0;0,1;0;0,2;0;0
+q21,1;0;0,1;0;0,1;0;0
+rmapSteps,"[""asdfasdf"",""asdfadf"",""asdfasfd""]","[""asdfasdf"",""asdfadf"",""asdfasfd""]","[""asdfasdf"",""asdfadf"",""asdfasfd""]"
+qcmdSteps,"[""asdfasdf"",""asdfadf"",""asdfasfd""]","[""asdfasdf"",""asdfadf"",""asdfasfd""]","[""asdfasdf"",""asdfadf"",""asdfasfd""]"
+qrmManagingDirectorId,,,a1b8965e-c90a-477a-933a-83a08f7901fe
+qcManagingDirectorId,,,a1b8965e-c90a-477a-933a-83a08f7901f8
+SubmitApproval,TRUE,TRUE,TRUE
+EMDApprove,TRUE,TRUE,TRUE
+RMDApprove,,,
+QRMMDApprove,,,
+QCMDApprove,TRUE,TRUE,TRUE
+EMDcomment,,,
+RMDcomment,,,
+QRMMDcomment,,,
+QCMDcomment,,,

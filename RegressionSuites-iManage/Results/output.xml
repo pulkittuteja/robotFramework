@@ -1,0 +1,1695 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.2 (Python 3.7.7 on win32)" generated="20210504 12:36:03.144" rpa="false">
+<suite id="s1" name="Test01-End2EndSuite1-NewOpportunityShell" source="C:\Users\pultut01\OneDrive - Robert Half\Desktop\Robot\AnshuLastCheckinLatestCode\ITPRO-iManage\RegressionSuites-iManage\Test01-End2EndSuite1-NewOpportunityShell.robot">
+<kw name="Run Keywords" library="BuiltIn" type="setup">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Setup</arg>
+</arguments>
+<kw name="Setup" library="resource">
+<doc>Initial setup keyword to assign the environmental variables and path to the data sheets based on environment to be tested.</doc>
+<kw name="Assign Environment Variables" library="resource">
+<doc>Sets the environmental variables based on test environment selected. This keyword expects the variable ${ENV} to be set at launch.
+${ENV} must be either DEV, TEST, STG or PROD (not case sensitive)</doc>
+<kw name="Set Log Level" library="BuiltIn">
+<doc>Sets the log threshold to the specified level and returns the old level.</doc>
+<arguments>
+<arg>NONE</arg>
+</arguments>
+<status status="PASS" starttime="20210504 12:36:07.813" endtime="20210504 12:36:07.813"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${ENV.upper()}' != 'TEST' and '${ENV.upper()}' != 'DEV' and '${ENV.upper()}' != 'UAT' and '${ENV.upper()}' != 'STG' and '${ENV.upper()}' != 'PROD' and '${ENV.upper()}' != 'CRM'</arg>
+<arg>Set Log Level</arg>
+<arg>INFO</arg>
+</arguments>
+<status status="PASS" starttime="20210504 12:36:07.813" endtime="20210504 12:36:07.814"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${ENV.upper()}' != 'TEST' and '${ENV.upper()}' != 'DEV' and '${ENV.upper()}' != 'UAT' and '${ENV.upper()}' != 'STG' and '${ENV.upper()}' != 'PROD' and '${ENV.upper()}' != 'CRM'</arg>
+<arg>Fatal Error</arg>
+<arg>${ENV_ERROR_MSG}</arg>
+</arguments>
+<status status="PASS" starttime="20210504 12:36:07.814" endtime="20210504 12:36:07.815"></status>
+</kw>
+<kw name="Set Variable If" library="BuiltIn">
+<doc>Sets variable based on the given condition.</doc>
+<arguments>
+<arg>"${ENV.upper()}" == "TEST"</arg>
+<arg>${TEST_URL}</arg>
+<arg>"${ENV.upper()}" == "DEV"</arg>
+<arg>${DEV_URL}</arg>
+<arg>"${ENV.upper()}" == "UAT"</arg>
+<arg>${UAT_URL}</arg>
+<arg>"${ENV.upper()}" == "STG"</arg>
+<arg>${STG_URL}</arg>
+<arg>"${ENV.upper()}" == "PROD"</arg>
+<arg>${PROD_URL}</arg>
+<arg>"${ENV.upper()}" == "CRM"</arg>
+<arg>${CRM_URL}</arg>
+</arguments>
+<assign>
+<var>${ENV_URL}</var>
+</assign>
+<status status="PASS" starttime="20210504 12:36:07.815" endtime="20210504 12:36:07.815"></status>
+</kw>
+<kw name="Set Variable If" library="BuiltIn">
+<doc>Sets variable based on the given condition.</doc>
+<arguments>
+<arg>"${ENV.upper()}" == "TEST"</arg>
+<arg>${TEST_ERA_URL}</arg>
+<arg>"${ENV.upper()}" == "DEV"</arg>
+<arg>${DEV_ERA_URL}</arg>
+<arg>"${ENV.upper()}" == "UAT"</arg>
+<arg>${UAT_ERA_URL}</arg>
+<arg>"${ENV.upper()}" == "STG"</arg>
+<arg>${STG_ERA_URL}</arg>
+<arg>"${ENV.upper()}" == "PROD"</arg>
+<arg>${PROD_ERA_URL}</arg>
+<arg>"${ENV.upper()}" == "CRM"</arg>
+<arg>${CRM_ERA_URL}</arg>
+</arguments>
+<assign>
+<var>${ENV_ERA_URL}</var>
+</assign>
+<status status="PASS" starttime="20210504 12:36:07.815" endtime="20210504 12:36:07.816"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${ENV_URL}</arg>
+</arguments>
+<status status="PASS" starttime="20210504 12:36:07.816" endtime="20210504 12:36:07.816"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${ENV_ERA_URL}</arg>
+</arguments>
+<status status="PASS" starttime="20210504 12:36:07.816" endtime="20210504 12:36:07.817"></status>
+</kw>
+<kw name="Set Database Name for iManage &amp; ibudget" library="resource">
+<arguments>
+<arg>${ENV}</arg>
+</arguments>
+<kw name="Set Log Level" library="BuiltIn">
+<doc>Sets the log threshold to the specified level and returns the old level.</doc>
+<arguments>
+<arg>NONE</arg>
+</arguments>
+<status status="PASS" starttime="20210504 12:36:07.817" endtime="20210504 12:36:07.817"></status>
+</kw>
+<kw name="Set Variable If" library="BuiltIn">
+<doc>Sets variable based on the given condition.</doc>
+<arguments>
+<arg>"${ENV.upper()}" == "TEST"</arg>
+<arg>imanagedb_qa</arg>
+<arg>"${ENV.upper()}" == "DEV"</arg>
+<arg>imanagedb</arg>
+</arguments>
+<assign>
+<var>${iManage_db}</var>
+</assign>
+<status status="PASS" starttime="20210504 12:36:07.817" endtime="20210504 12:36:07.818"></status>
+</kw>
+<kw name="Set Variable If" library="BuiltIn">
+<doc>Sets variable based on the given condition.</doc>
+<arguments>
+<arg>"${ENV.upper()}" == "TEST"</arg>
+<arg>ibudgetdb_qa</arg>
+<arg>"${ENV.upper()}" == "DEV"</arg>
+<arg>ibudgetdb</arg>
+</arguments>
+<assign>
+<var>${iBudget_db}</var>
+</assign>
+<status status="PASS" starttime="20210504 12:36:07.818" endtime="20210504 12:36:07.818"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${iManage_db}</arg>
+</arguments>
+<status status="PASS" starttime="20210504 12:36:07.818" endtime="20210504 12:36:07.819"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${iBudget_db}</arg>
+</arguments>
+<status status="PASS" starttime="20210504 12:36:07.819" endtime="20210504 12:36:07.819"></status>
+</kw>
+<kw name="Set Log Level" library="BuiltIn">
+<doc>Sets the log threshold to the specified level and returns the old level.</doc>
+<arguments>
+<arg>INFO</arg>
+</arguments>
+<msg timestamp="20210504 12:36:07.820" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20210504 12:36:07.819" endtime="20210504 12:36:07.820"></status>
+</kw>
+<status status="PASS" starttime="20210504 12:36:07.817" endtime="20210504 12:36:07.821"></status>
+</kw>
+<kw name="Set Log Level" library="BuiltIn">
+<doc>Sets the log threshold to the specified level and returns the old level.</doc>
+<arguments>
+<arg>INFO</arg>
+</arguments>
+<msg timestamp="20210504 12:36:07.821" level="INFO">Log level changed from INFO to INFO.</msg>
+<status status="PASS" starttime="20210504 12:36:07.821" endtime="20210504 12:36:07.821"></status>
+</kw>
+<status status="PASS" starttime="20210504 12:36:07.813" endtime="20210504 12:36:07.821"></status>
+</kw>
+<kw name="Assign Datasheet Path" library="resource">
+<doc>Sets the path to the data sheets based on test environment selected. This keyword expects the variable ${ENV} to be set at launch.
+${ENV} must be either DEV, TEST, STG or PROD (not case sensitive)</doc>
+<kw name="Set Log Level" library="BuiltIn">
+<doc>Sets the log threshold to the specified level and returns the old level.</doc>
+<arguments>
+<arg>NONE</arg>
+</arguments>
+<status status="PASS" starttime="20210504 12:36:07.821" endtime="20210504 12:36:07.821"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${ENV.upper()}' != 'TEST' and '${ENV.upper()}' != 'DEV' and '${ENV.upper()}' != 'UAT' and '${ENV.upper()}' != 'STG' and '${ENV.upper()}' != 'PROD' and '${ENV.upper()}' != 'CRM'</arg>
+<arg>Set Log Level</arg>
+<arg>INFO</arg>
+</arguments>
+<status status="PASS" starttime="20210504 12:36:07.821" endtime="20210504 12:36:07.822"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${ENV.upper()}' != 'TEST' and '${ENV.upper()}' != 'DEV' and '${ENV.upper()}' != 'UAT' and '${ENV.upper()}' != 'STG' and '${ENV.upper()}' != 'PROD' and '${ENV.upper()}' != 'CRM'</arg>
+<arg>Fatal Error</arg>
+<arg>${ENV_ERROR_MSG}</arg>
+</arguments>
+<status status="PASS" starttime="20210504 12:36:07.822" endtime="20210504 12:36:07.824"></status>
+</kw>
+<kw name="Set Variable If" library="BuiltIn">
+<doc>Sets variable based on the given condition.</doc>
+<arguments>
+<arg>"${ENV.upper()}" == "TEST"</arg>
+<arg>${ERA_DATA}</arg>
+<arg>"${ENV.upper()}" == "DEV"</arg>
+<arg>${ERA_DATA}</arg>
+<arg>"${ENV.upper()}" == "UAT"</arg>
+<arg>${ERA_UAT_DATA}</arg>
+<arg>"${ENV.upper()}" == "STG"</arg>
+<arg>${ERA_STG_DATA}</arg>
+<arg>"${ENV.upper()}" == "PROD"</arg>
+<arg>TBD</arg>
+<arg>"${ENV.upper()}" == "CRM"</arg>
+<arg>${ERA_DATA}</arg>
+</arguments>
+<assign>
+<var>${ERA_DATA}</var>
+</assign>
+<status status="PASS" starttime="20210504 12:36:07.824" endtime="20210504 12:36:07.824"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${ERA_DATA}</arg>
+</arguments>
+<status status="PASS" starttime="20210504 12:36:07.824" endtime="20210504 12:36:07.824"></status>
+</kw>
+<kw name="Set Log Level" library="BuiltIn">
+<doc>Sets the log threshold to the specified level and returns the old level.</doc>
+<arguments>
+<arg>INFO</arg>
+</arguments>
+<msg timestamp="20210504 12:36:07.824" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20210504 12:36:07.824" endtime="20210504 12:36:07.825"></status>
+</kw>
+<status status="PASS" starttime="20210504 12:36:07.821" endtime="20210504 12:36:07.825"></status>
+</kw>
+<kw name="Assign Region Datasheet Path for iManage &amp; iBudget" library="resource">
+<doc>Sets the path to the data sheets based on region selected. This keyword expects the variable ${Region} to be set at launch.
+${Region} must be either NA, APAC or AMEA (not case sensitive)</doc>
+<kw name="Set Log Level" library="BuiltIn">
+<doc>Sets the log threshold to the specified level and returns the old level.</doc>
+<arguments>
+<arg>NONE</arg>
+</arguments>
+<status status="PASS" starttime="20210504 12:36:07.826" endtime="20210504 12:36:07.826"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${Region.upper()}' != 'NA' and '${Region.upper()}' != 'APAC' and '${Region.upper()}' != 'AMEA'</arg>
+<arg>Fatal Error</arg>
+<arg>${Region_ERROR_MSG}</arg>
+</arguments>
+<status status="PASS" starttime="20210504 12:36:07.826" endtime="20210504 12:36:07.827"></status>
+</kw>
+<kw name="Set Variable If" library="BuiltIn">
+<doc>Sets variable based on the given condition.</doc>
+<arguments>
+<arg>"${Region.upper()}" == "NA"</arg>
+<arg>${SHELL_DATA_NA}</arg>
+<arg>"${Region.upper()}" == "APAC"</arg>
+<arg>${SHELL_DATA_APAC}</arg>
+<arg>"${Region.upper()}" == "AMEA"</arg>
+<arg>TBD</arg>
+</arguments>
+<assign>
+<var>${iManage_Shell_Data}</var>
+</assign>
+<status status="PASS" starttime="20210504 12:36:07.827" endtime="20210504 12:36:07.827"></status>
+</kw>
+<kw name="Set Variable If" library="BuiltIn">
+<doc>Sets variable based on the given condition.</doc>
+<arguments>
+<arg>"${Region.upper()}" == "NA"</arg>
+<arg>${SUB_BUDGET_DATA_NA}</arg>
+<arg>"${Region.upper()}" == "APAC"</arg>
+<arg>${SUB_BUDGET_DATA_APAC}</arg>
+<arg>"${Region.upper()}" == "AMEA"</arg>
+<arg>TBD</arg>
+</arguments>
+<assign>
+<var>${iBudget_sub_Data}</var>
+</assign>
+<status status="PASS" starttime="20210504 12:36:07.827" endtime="20210504 12:36:07.828"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${iManage_Shell_Data}</arg>
+</arguments>
+<status status="PASS" starttime="20210504 12:36:07.828" endtime="20210504 12:36:07.828"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${iBudget_sub_Data}</arg>
+</arguments>
+<status status="PASS" starttime="20210504 12:36:07.828" endtime="20210504 12:36:07.829"></status>
+</kw>
+<kw name="Set Log Level" library="BuiltIn">
+<doc>Sets the log threshold to the specified level and returns the old level.</doc>
+<arguments>
+<arg>INFO</arg>
+</arguments>
+<msg timestamp="20210504 12:36:07.830" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20210504 12:36:07.830" endtime="20210504 12:36:07.830"></status>
+</kw>
+<status status="PASS" starttime="20210504 12:36:07.825" endtime="20210504 12:36:07.830"></status>
+</kw>
+<status status="PASS" starttime="20210504 12:36:07.812" endtime="20210504 12:36:07.830"></status>
+</kw>
+<status status="PASS" starttime="20210504 12:36:07.812" endtime="20210504 12:36:07.830"></status>
+</kw>
+<test id="s1-t1" name="Create draft Shell with mandatory fields and validate Assistant is inactive">
+<kw name="Get Approver Roles" library="resource">
+<doc>Creates a Global dictionary '${APPROVERS}'</doc>
+<arguments>
+<arg>apprv01</arg>
+</arguments>
+<kw name="Set Log Level" library="BuiltIn">
+<doc>Sets the log threshold to the specified level and returns the old level.</doc>
+<arguments>
+<arg>NONE</arg>
+</arguments>
+<status status="PASS" starttime="20210504 12:36:07.831" endtime="20210504 12:36:07.831"></status>
+</kw>
+<kw name="Get Data From CSV File" library="resource">
+<doc>This keyword creates a data dictionary from a given line in a CSV file. Requires a valid datafile location and a test case number to execute.
+The keyword will fail if no datafile path is given. The test case number defaults to EMPTY if a test case number is not given and the will exit from the
+keyword without a failure. This is to accomadate the use of this keyword for data seeding activities.
+Step 1) Evaluates the arguments and will exit if TC# is missing
+Step 2) Reads the entire CSV file into memory as a list
+Step 3) Sets the data read row variable based on the given TC#
+Step 4) Gets the first row (index 0) from the list which are the column headers which will be used for the data dictionary keys
+Step 5) Gets the data from the given read row which will be used for the data dictionary values
+Step 6) Loops throught the length of the list and the key:value pairs to a data dictionary
+Returns the data dictionary
+NOTE: this needs to be updated to return an error msg if the given TC# is not found. Currently it will not fail and return the data from the last line of
+data file.</doc>
+<arguments>
+<arg>${APPRV_DATA}</arg>
+<arg>Role</arg>
+<arg>${approver_row}</arg>
+</arguments>
+<assign>
+<var>${APPROVERS}</var>
+</assign>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${TestCaseNum}'=='${empty}'</arg>
+<arg>Log</arg>
+<arg>ERA Data Dictionary is empty. Returning from Keyword</arg>
+</arguments>
+<status status="PASS" starttime="20210504 12:36:07.832" endtime="20210504 12:36:07.832"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${TestCaseNum}'=='${empty}'</arg>
+<arg>Return From Keyword</arg>
+</arguments>
+<status status="PASS" starttime="20210504 12:36:07.832" endtime="20210504 12:36:07.832"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${Key}'=='${empty}'</arg>
+<arg>Log</arg>
+<arg>ERA Data Dictionary Key is empty. Returning from Keyword</arg>
+</arguments>
+<status status="PASS" starttime="20210504 12:36:07.832" endtime="20210504 12:36:07.833"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${Key}'=='${empty}'</arg>
+<arg>Return From Keyword</arg>
+</arguments>
+<status status="PASS" starttime="20210504 12:36:07.833" endtime="20210504 12:36:07.833"></status>
+</kw>
+<kw name="Read Csv As Dictionary" library="CSVLib">
+<arguments>
+<arg>${datafile}</arg>
+<arg>${Key}</arg>
+<arg>${TestCaseNum}</arg>
+</arguments>
+<assign>
+<var>${dict}</var>
+</assign>
+<status status="PASS" starttime="20210504 12:36:07.833" endtime="20210504 12:36:07.842"></status>
+</kw>
+<status status="PASS" starttime="20210504 12:36:07.831" endtime="20210504 12:36:07.842"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${APPROVERS}</arg>
+</arguments>
+<status status="PASS" starttime="20210504 12:36:07.842" endtime="20210504 12:36:07.843"></status>
+</kw>
+<kw name="Set Log Level" library="BuiltIn">
+<doc>Sets the log threshold to the specified level and returns the old level.</doc>
+<arguments>
+<arg>INFO</arg>
+</arguments>
+<msg timestamp="20210504 12:36:07.843" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20210504 12:36:07.843" endtime="20210504 12:36:07.843"></status>
+</kw>
+<status status="PASS" starttime="20210504 12:36:07.830" endtime="20210504 12:36:07.844"></status>
+</kw>
+<kw name="Login in as ADMIN" library="resource">
+<doc>Validates the role being entered (EM, EMD, QRMMD, QCMD, GLMD, RMD or ADMIN).</doc>
+<kw name="Set Log Level" library="BuiltIn">
+<doc>Sets the log threshold to the specified level and returns the old level.</doc>
+<arguments>
+<arg>NONE</arg>
+</arguments>
+<status status="PASS" starttime="20210504 12:36:07.844" endtime="20210504 12:36:07.844"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${ACTIVE_ROLE}</arg>
+<arg>${role}</arg>
+</arguments>
+<status status="PASS" starttime="20210504 12:36:07.845" endtime="20210504 12:36:07.851"></status>
+</kw>
+<kw name="Open Browser To Home Page" library="resource">
+<doc>Opens a browser based on the selected on ${BROWSER} selected at launch. this keyword requires 3-5 variables:
+${REMOTE} (Defaults to FALSE but can be overwritten as a execution param),
+${ENV_URL}(set in Assign Environment Variables keyword),
+${BROWSER} (set as a execution param).
+If ${REMOTE} is TRUE then the keyword requires a port and host to the selenium grid.</doc>
+<kw name="Random Sleep" library="resource">
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>random.randint(500, 4000)</arg>
+<arg>random,sys</arg>
+</arguments>
+<assign>
+<var>${r}</var>
+</assign>
+<status status="PASS" starttime="20210504 12:36:07.852" endtime="20210504 12:36:07.852"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>${r}milliseconds</arg>
+</arguments>
+<status status="PASS" starttime="20210504 12:36:07.852" endtime="20210504 12:36:10.338"></status>
+</kw>
+<status status="PASS" starttime="20210504 12:36:07.852" endtime="20210504 12:36:10.338"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${REMOTE.upper()}'=='FALSE'</arg>
+<arg>Open Browser</arg>
+<arg>${ENV_URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>desired_capabilities=ie.ensureCleanSession:true</arg>
+</arguments>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${ENV_URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>desired_capabilities=ie.ensureCleanSession:true</arg>
+</arguments>
+<status status="PASS" starttime="20210504 12:36:10.339" endtime="20210504 12:36:15.591"></status>
+</kw>
+<status status="PASS" starttime="20210504 12:36:10.338" endtime="20210504 12:36:15.591"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${REMOTE.upper()}'=='TRUE'</arg>
+<arg>Open Browser</arg>
+<arg>${ENV_URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>remote_url=http://${HOST}:${PORT}/wd/hub</arg>
+<arg>desired_capabilities=ie.ensureCleanSession:true</arg>
+</arguments>
+<status status="PASS" starttime="20210504 12:36:15.591" endtime="20210504 12:36:15.592"></status>
+</kw>
+<kw name="Delete All Cookies" library="SeleniumLibrary">
+<doc>Deletes all cookies.</doc>
+<status status="PASS" starttime="20210504 12:36:15.592" endtime="20210504 12:36:17.679"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210504 12:36:17.679" endtime="20210504 12:36:17.813"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" starttime="20210504 12:36:17.814" endtime="20210504 12:36:17.815"></status>
+</kw>
+<status status="PASS" starttime="20210504 12:36:07.851" endtime="20210504 12:36:17.815"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${role.upper()}' != 'EMD' and '${role.upper()}' != 'EM' and '${role.upper()}' != 'QRMMD' and '${role.upper()}' != 'QCMD' and '${role.upper()}' != 'GLMD' and '${role.upper()}' != 'RMD' and '${role.upper()}' != 'ADMIN' and '${role.upper()}' != 'MINE'</arg>
+<arg>Set Log Level</arg>
+<arg>INFO</arg>
+</arguments>
+<status status="PASS" starttime="20210504 12:36:17.816" endtime="20210504 12:36:17.818"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${role.upper()}' != 'EMD' and '${role.upper()}' != 'EM' and '${role.upper()}' != 'QRMMD' and '${role.upper()}' != 'QCMD' and '${role.upper()}' != 'GLMD' and '${role.upper()}' != 'RMD' and '${role.upper()}' != 'ADMIN' and '${role.upper()}' != 'MINE'</arg>
+<arg>Fatal Error</arg>
+<arg>${ROLE_ERROR_MSG}</arg>
+</arguments>
+<status status="PASS" starttime="20210504 12:36:17.819" endtime="20210504 12:36:17.822"></status>
+</kw>
+<kw name="Set Variable If" library="BuiltIn">
+<doc>Sets variable based on the given condition.</doc>
+<arguments>
+<arg>"${role.upper()}" == "EMD"</arg>
+<arg>${APPROVERS["EMDEMAIL"]}</arg>
+<arg>"${role.upper()}" == "EM"</arg>
+<arg>${APPROVERS["EMEMAIL"]}</arg>
+<arg>"${role.upper()}" == "QRMMD"</arg>
+<arg>${APPROVERS["QRMMDEMAIL"]}</arg>
+<arg>"${role.upper()}" == "QCMD"</arg>
+<arg>${APPROVERS["QCMDEMAIL"]}</arg>
+<arg>"${role.upper()}" == "GLMD"</arg>
+<arg>${APPROVERS["GLMDEMAIL"]}</arg>
+<arg>"${role.upper()}" == "RMD"</arg>
+<arg>${APPROVERS["RMDEMAIL"]}</arg>
+<arg>"${role.upper()}" == "ADMIN"</arg>
+<arg>${APPROVERS["ADMINEMAIL"]}</arg>
+<arg>"${role.upper()}" == "MINE"</arg>
+<arg>${APPROVERS["MINEEMAIL"]}</arg>
+</arguments>
+<assign>
+<var>${role_email}</var>
+</assign>
+<kw name="Set Variable If" library="BuiltIn">
+<doc>Sets variable based on the given condition.</doc>
+<arguments>
+<arg>"${role.upper()}" == "EM"</arg>
+<arg>${APPROVERS["EMEMAIL"]}</arg>
+<arg>"${role.upper()}" == "QRMMD"</arg>
+<arg>${APPROVERS["QRMMDEMAIL"]}</arg>
+<arg>"${role.upper()}" == "QCMD"</arg>
+<arg>${APPROVERS["QCMDEMAIL"]}</arg>
+<arg>"${role.upper()}" == "GLMD"</arg>
+<arg>${APPROVERS["GLMDEMAIL"]}</arg>
+<arg>"${role.upper()}" == "RMD"</arg>
+<arg>${APPROVERS["RMDEMAIL"]}</arg>
+<arg>"${role.upper()}" == "ADMIN"</arg>
+<arg>${APPROVERS["ADMINEMAIL"]}</arg>
+<arg>"${role.upper()}" == "MINE"</arg>
+<arg>${APPROVERS["MINEEMAIL"]}</arg>
+</arguments>
+<kw name="Set Variable If" library="BuiltIn">
+<doc>Sets variable based on the given condition.</doc>
+<arguments>
+<arg>"${role.upper()}" == "QRMMD"</arg>
+<arg>${APPROVERS["QRMMDEMAIL"]}</arg>
+<arg>"${role.upper()}" == "QCMD"</arg>
+<arg>${APPROVERS["QCMDEMAIL"]}</arg>
+<arg>"${role.upper()}" == "GLMD"</arg>
+<arg>${APPROVERS["GLMDEMAIL"]}</arg>
+<arg>"${role.upper()}" == "RMD"</arg>
+<arg>${APPROVERS["RMDEMAIL"]}</arg>
+<arg>"${role.upper()}" == "ADMIN"</arg>
+<arg>${APPROVERS["ADMINEMAIL"]}</arg>
+<arg>"${role.upper()}" == "MINE"</arg>
+<arg>${APPROVERS["MINEEMAIL"]}</arg>
+</arguments>
+<kw name="Set Variable If" library="BuiltIn">
+<doc>Sets variable based on the given condition.</doc>
+<arguments>
+<arg>"${role.upper()}" == "QCMD"</arg>
+<arg>${APPROVERS["QCMDEMAIL"]}</arg>
+<arg>"${role.upper()}" == "GLMD"</arg>
+<arg>${APPROVERS["GLMDEMAIL"]}</arg>
+<arg>"${role.upper()}" == "RMD"</arg>
+<arg>${APPROVERS["RMDEMAIL"]}</arg>
+<arg>"${role.upper()}" == "ADMIN"</arg>
+<arg>${APPROVERS["ADMINEMAIL"]}</arg>
+<arg>"${role.upper()}" == "MINE"</arg>
+<arg>${APPROVERS["MINEEMAIL"]}</arg>
+</arguments>
+<kw name="Set Variable If" library="BuiltIn">
+<doc>Sets variable based on the given condition.</doc>
+<arguments>
+<arg>"${role.upper()}" == "GLMD"</arg>
+<arg>${APPROVERS["GLMDEMAIL"]}</arg>
+<arg>"${role.upper()}" == "RMD"</arg>
+<arg>${APPROVERS["RMDEMAIL"]}</arg>
+<arg>"${role.upper()}" == "ADMIN"</arg>
+<arg>${APPROVERS["ADMINEMAIL"]}</arg>
+<arg>"${role.upper()}" == "MINE"</arg>
+<arg>${APPROVERS["MINEEMAIL"]}</arg>
+</arguments>
+<kw name="Set Variable If" library="BuiltIn">
+<doc>Sets variable based on the given condition.</doc>
+<arguments>
+<arg>"${role.upper()}" == "RMD"</arg>
+<arg>${APPROVERS["RMDEMAIL"]}</arg>
+<arg>"${role.upper()}" == "ADMIN"</arg>
+<arg>${APPROVERS["ADMINEMAIL"]}</arg>
+<arg>"${role.upper()}" == "MINE"</arg>
+<arg>${APPROVERS["MINEEMAIL"]}</arg>
+</arguments>
+<kw name="Set Variable If" library="BuiltIn">
+<doc>Sets variable based on the given condition.</doc>
+<arguments>
+<arg>"${role.upper()}" == "ADMIN"</arg>
+<arg>${APPROVERS["ADMINEMAIL"]}</arg>
+<arg>"${role.upper()}" == "MINE"</arg>
+<arg>${APPROVERS["MINEEMAIL"]}</arg>
+</arguments>
+<status status="PASS" starttime="20210504 12:36:17.833" endtime="20210504 12:36:17.834"></status>
+</kw>
+<status status="PASS" starttime="20210504 12:36:17.831" endtime="20210504 12:36:17.834"></status>
+</kw>
+<status status="PASS" starttime="20210504 12:36:17.829" endtime="20210504 12:36:17.834"></status>
+</kw>
+<status status="PASS" starttime="20210504 12:36:17.828" endtime="20210504 12:36:17.835"></status>
+</kw>
+<status status="PASS" starttime="20210504 12:36:17.826" endtime="20210504 12:36:17.835"></status>
+</kw>
+<status status="PASS" starttime="20210504 12:36:17.825" endtime="20210504 12:36:17.835"></status>
+</kw>
+<status status="PASS" starttime="20210504 12:36:17.823" endtime="20210504 12:36:17.835"></status>
+</kw>
+<kw name="Set Variable If" library="BuiltIn">
+<doc>Sets variable based on the given condition.</doc>
+<arguments>
+<arg>"${role.upper()}" == "EMD"</arg>
+<arg>${APPROVERS["EMD"]}</arg>
+<arg>"${role.upper()}" == "EM"</arg>
+<arg>${APPROVERS["EM"]}</arg>
+<arg>"${role.upper()}" == "QRMMD"</arg>
+<arg>${APPROVERS["QRMMD"]}</arg>
+<arg>"${role.upper()}" == "QCMD"</arg>
+<arg>${APPROVERS["QCMD"]}</arg>
+<arg>"${role.upper()}" == "GLMD"</arg>
+<arg>${APPROVERS["GLMD"]}</arg>
+<arg>"${role.upper()}" == "RMD"</arg>
+<arg>${APPROVERS["RMD"]}</arg>
+<arg>"${role.upper()}" == "ADMIN"</arg>
+<arg>${APPROVERS["ADMIN"]}</arg>
+<arg>"${role.upper()}" == "MINE"</arg>
+<arg>${APPROVERS["MINE"]}</arg>
+</arguments>
+<assign>
+<var>${ACTIVEUSER}</var>
+</assign>
+<kw name="Set Variable If" library="BuiltIn">
+<doc>Sets variable based on the given condition.</doc>
+<arguments>
+<arg>"${role.upper()}" == "EM"</arg>
+<arg>${APPROVERS["EM"]}</arg>
+<arg>"${role.upper()}" == "QRMMD"</arg>
+<arg>${APPROVERS["QRMMD"]}</arg>
+<arg>"${role.upper()}" == "QCMD"</arg>
+<arg>${APPROVERS["QCMD"]}</arg>
+<arg>"${role.upper()}" == "GLMD"</arg>
+<arg>${APPROVERS["GLMD"]}</arg>
+<arg>"${role.upper()}" == "RMD"</arg>
+<arg>${APPROVERS["RMD"]}</arg>
+<arg>"${role.upper()}" == "ADMIN"</arg>
+<arg>${APPROVERS["ADMIN"]}</arg>
+<arg>"${role.upper()}" == "MINE"</arg>
+<arg>${APPROVERS["MINE"]}</arg>
+</arguments>
+<kw name="Set Variable If" library="BuiltIn">
+<doc>Sets variable based on the given condition.</doc>
+<arguments>
+<arg>"${role.upper()}" == "QRMMD"</arg>
+<arg>${APPROVERS["QRMMD"]}</arg>
+<arg>"${role.upper()}" == "QCMD"</arg>
+<arg>${APPROVERS["QCMD"]}</arg>
+<arg>"${role.upper()}" == "GLMD"</arg>
+<arg>${APPROVERS["GLMD"]}</arg>
+<arg>"${role.upper()}" == "RMD"</arg>
+<arg>${APPROVERS["RMD"]}</arg>
+<arg>"${role.upper()}" == "ADMIN"</arg>
+<arg>${APPROVERS["ADMIN"]}</arg>
+<arg>"${role.upper()}" == "MINE"</arg>
+<arg>${APPROVERS["MINE"]}</arg>
+</arguments>
+<kw name="Set Variable If" library="BuiltIn">
+<doc>Sets variable based on the given condition.</doc>
+<arguments>
+<arg>"${role.upper()}" == "QCMD"</arg>
+<arg>${APPROVERS["QCMD"]}</arg>
+<arg>"${role.upper()}" == "GLMD"</arg>
+<arg>${APPROVERS["GLMD"]}</arg>
+<arg>"${role.upper()}" == "RMD"</arg>
+<arg>${APPROVERS["RMD"]}</arg>
+<arg>"${role.upper()}" == "ADMIN"</arg>
+<arg>${APPROVERS["ADMIN"]}</arg>
+<arg>"${role.upper()}" == "MINE"</arg>
+<arg>${APPROVERS["MINE"]}</arg>
+</arguments>
+<kw name="Set Variable If" library="BuiltIn">
+<doc>Sets variable based on the given condition.</doc>
+<arguments>
+<arg>"${role.upper()}" == "GLMD"</arg>
+<arg>${APPROVERS["GLMD"]}</arg>
+<arg>"${role.upper()}" == "RMD"</arg>
+<arg>${APPROVERS["RMD"]}</arg>
+<arg>"${role.upper()}" == "ADMIN"</arg>
+<arg>${APPROVERS["ADMIN"]}</arg>
+<arg>"${role.upper()}" == "MINE"</arg>
+<arg>${APPROVERS["MINE"]}</arg>
+</arguments>
+<kw name="Set Variable If" library="BuiltIn">
+<doc>Sets variable based on the given condition.</doc>
+<arguments>
+<arg>"${role.upper()}" == "RMD"</arg>
+<arg>${APPROVERS["RMD"]}</arg>
+<arg>"${role.upper()}" == "ADMIN"</arg>
+<arg>${APPROVERS["ADMIN"]}</arg>
+<arg>"${role.upper()}" == "MINE"</arg>
+<arg>${APPROVERS["MINE"]}</arg>
+</arguments>
+<kw name="Set Variable If" library="BuiltIn">
+<doc>Sets variable based on the given condition.</doc>
+<arguments>
+<arg>"${role.upper()}" == "ADMIN"</arg>
+<arg>${APPROVERS["ADMIN"]}</arg>
+<arg>"${role.upper()}" == "MINE"</arg>
+<arg>${APPROVERS["MINE"]}</arg>
+</arguments>
+<status status="PASS" starttime="20210504 12:36:17.844" endtime="20210504 12:36:17.845"></status>
+</kw>
+<status status="PASS" starttime="20210504 12:36:17.843" endtime="20210504 12:36:17.846"></status>
+</kw>
+<status status="PASS" starttime="20210504 12:36:17.842" endtime="20210504 12:36:17.846"></status>
+</kw>
+<status status="PASS" starttime="20210504 12:36:17.841" endtime="20210504 12:36:17.846"></status>
+</kw>
+<status status="PASS" starttime="20210504 12:36:17.839" endtime="20210504 12:36:17.846"></status>
+</kw>
+<status status="PASS" starttime="20210504 12:36:17.837" endtime="20210504 12:36:17.846"></status>
+</kw>
+<status status="PASS" starttime="20210504 12:36:17.836" endtime="20210504 12:36:17.847"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${ACTIVEUSER}</arg>
+</arguments>
+<status status="PASS" starttime="20210504 12:36:17.847" endtime="20210504 12:36:17.850"></status>
+</kw>
+<kw name="Set Log Level" library="BuiltIn">
+<doc>Sets the log threshold to the specified level and returns the old level.</doc>
+<arguments>
+<arg>INFO</arg>
+</arguments>
+<msg timestamp="20210504 12:36:17.854" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20210504 12:36:17.852" endtime="20210504 12:36:17.855"></status>
+</kw>
+<kw name="Login Setup" library="resource">
+<doc>Sets up the test to start from the azure login page</doc>
+<kw name="Set Log Level" library="BuiltIn">
+<doc>Sets the log threshold to the specified level and returns the old level.</doc>
+<arguments>
+<arg>NONE</arg>
+</arguments>
+<status status="PASS" starttime="20210504 12:36:17.858" endtime="20210504 12:36:17.859"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>10s</arg>
+</arguments>
+<status status="PASS" starttime="20210504 12:36:17.860" endtime="20210504 12:36:27.862"></status>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<arguments>
+<arg>Page Should Contain Element</arg>
+<arg>${LOGOUT Link}</arg>
+<arg>loglevel=NONE</arg>
+</arguments>
+<assign>
+<var>${a}</var>
+</assign>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${LOGOUT Link}</arg>
+<arg>loglevel=NONE</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" starttime="20210504 12:36:28.950" endtime="20210504 12:36:29.902"></status>
+</kw>
+<status status="FAIL" starttime="20210504 12:36:27.865" endtime="20210504 12:36:30.017"></status>
+</kw>
+<status status="PASS" starttime="20210504 12:36:27.863" endtime="20210504 12:36:30.018"></status>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<arguments>
+<arg>Page Should Contain Element</arg>
+<arg>${MSL BACK ARROW Btn}</arg>
+<arg>loglevel=NONE</arg>
+</arguments>
+<assign>
+<var>${b}</var>
+</assign>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${MSL BACK ARROW Btn}</arg>
+<arg>loglevel=NONE</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" starttime="20210504 12:36:31.092" endtime="20210504 12:36:32.014"></status>
+</kw>
+<status status="FAIL" starttime="20210504 12:36:30.018" endtime="20210504 12:36:32.016"></status>
+</kw>
+<status status="PASS" starttime="20210504 12:36:30.018" endtime="20210504 12:36:32.016"></status>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<arguments>
+<arg>Page Should Contain Element</arg>
+<arg>${MSL USERNAME Input}</arg>
+<arg>loglevel=NONE</arg>
+</arguments>
+<assign>
+<var>${c}</var>
+</assign>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${MSL USERNAME Input}</arg>
+<arg>loglevel=NONE</arg>
+</arguments>
+<status status="PASS" starttime="20210504 12:36:32.017" endtime="20210504 12:36:32.532"></status>
+</kw>
+<status status="PASS" starttime="20210504 12:36:32.016" endtime="20210504 12:36:32.532"></status>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<arguments>
+<arg>Page Should Contain Element</arg>
+<arg>${MSL USE ANOTHER ACCOUNT}</arg>
+<arg>loglevel=NONE</arg>
+</arguments>
+<assign>
+<var>${d}</var>
+</assign>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${MSL USE ANOTHER ACCOUNT}</arg>
+<arg>loglevel=NONE</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" starttime="20210504 12:36:33.593" endtime="20210504 12:36:34.610"></status>
+</kw>
+<status status="FAIL" starttime="20210504 12:36:32.534" endtime="20210504 12:36:34.612"></status>
+</kw>
+<status status="PASS" starttime="20210504 12:36:32.533" endtime="20210504 12:36:34.613"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${a[0].upper()}'=='PASS'</arg>
+<arg>Log User Out</arg>
+<arg>ELSE IF</arg>
+<arg>'${b[0].upper()}'=='PASS'</arg>
+<arg>Run Keywords</arg>
+<arg>Click Element</arg>
+<arg>${MSL BACK ARROW Btn}</arg>
+<arg>AND</arg>
+<arg>Wait Until Page Contains Element</arg>
+<arg>${MSL USE ANOTHER ACCOUNT}</arg>
+<arg>5s</arg>
+<arg>AND</arg>
+<arg>Click Element</arg>
+<arg>${MSL USE ANOTHER ACCOUNT}</arg>
+<arg>ELSE IF</arg>
+<arg>'${d[0].upper()}'=='PASS'</arg>
+<arg>Click Element</arg>
+<arg>${MSL USE ANOTHER ACCOUNT}</arg>
+</arguments>
+<status status="PASS" starttime="20210504 12:36:34.613" endtime="20210504 12:36:34.615"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<status status="PASS" starttime="20210504 12:36:34.616" endtime="20210504 12:36:36.618"></status>
+</kw>
+<kw name="Set Log Level" library="BuiltIn">
+<doc>Sets the log threshold to the specified level and returns the old level.</doc>
+<arguments>
+<arg>INFO</arg>
+</arguments>
+<msg timestamp="20210504 12:36:36.620" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20210504 12:36:36.619" endtime="20210504 12:36:36.620"></status>
+</kw>
+<status status="PASS" starttime="20210504 12:36:17.856" endtime="20210504 12:36:36.620"></status>
+</kw>
+<kw name="Get Password" library="resource">
+<arguments>
+<arg>${role_email}</arg>
+</arguments>
+<assign>
+<var>${pass}</var>
+</assign>
+<kw name="Get Data From CSV File" library="resource">
+<doc>This keyword creates a data dictionary from a given line in a CSV file. Requires a valid datafile location and a test case number to execute.
+The keyword will fail if no datafile path is given. The test case number defaults to EMPTY if a test case number is not given and the will exit from the
+keyword without a failure. This is to accomadate the use of this keyword for data seeding activities.
+Step 1) Evaluates the arguments and will exit if TC# is missing
+Step 2) Reads the entire CSV file into memory as a list
+Step 3) Sets the data read row variable based on the given TC#
+Step 4) Gets the first row (index 0) from the list which are the column headers which will be used for the data dictionary keys
+Step 5) Gets the data from the given read row which will be used for the data dictionary values
+Step 6) Loops throught the length of the list and the key:value pairs to a data dictionary
+Returns the data dictionary
+NOTE: this needs to be updated to return an error msg if the given TC# is not found. Currently it will not fail and return the data from the last line of
+data file.</doc>
+<arguments>
+<arg>${PASS_LOCAL}</arg>
+<arg>User</arg>
+<arg>A1</arg>
+</arguments>
+<assign>
+<var>${PASS}</var>
+</assign>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${TestCaseNum}'=='${empty}'</arg>
+<arg>Log</arg>
+<arg>ERA Data Dictionary is empty. Returning from Keyword</arg>
+</arguments>
+<status status="PASS" starttime="20210504 12:36:36.625" endtime="20210504 12:36:36.625"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${TestCaseNum}'=='${empty}'</arg>
+<arg>Return From Keyword</arg>
+</arguments>
+<status status="PASS" starttime="20210504 12:36:36.625" endtime="20210504 12:36:36.626"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${Key}'=='${empty}'</arg>
+<arg>Log</arg>
+<arg>ERA Data Dictionary Key is empty. Returning from Keyword</arg>
+</arguments>
+<status status="PASS" starttime="20210504 12:36:36.627" endtime="20210504 12:36:36.628"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${Key}'=='${empty}'</arg>
+<arg>Return From Keyword</arg>
+</arguments>
+<status status="PASS" starttime="20210504 12:36:36.628" endtime="20210504 12:36:36.629"></status>
+</kw>
+<kw name="Read Csv As Dictionary" library="CSVLib">
+<arguments>
+<arg>${datafile}</arg>
+<arg>${Key}</arg>
+<arg>${TestCaseNum}</arg>
+</arguments>
+<assign>
+<var>${dict}</var>
+</assign>
+<msg timestamp="20210504 12:36:36.644" level="INFO">${dict} = {'qasamsha05@roberthalf.com': 'StrangerThings2016', 'anscho01@protiviti.com': None}</msg>
+<status status="PASS" starttime="20210504 12:36:36.630" endtime="20210504 12:36:36.645"></status>
+</kw>
+<msg timestamp="20210504 12:36:36.645" level="INFO">${PASS} = {'qasamsha05@roberthalf.com': 'StrangerThings2016', 'anscho01@protiviti.com': None}</msg>
+<status status="PASS" starttime="20210504 12:36:36.622" endtime="20210504 12:36:36.646"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${PASS}</arg>
+</arguments>
+<msg timestamp="20210504 12:36:36.647" level="INFO">{'qasamsha05@roberthalf.com': 'StrangerThings2016', 'anscho01@protiviti.com': None}</msg>
+<status status="PASS" starttime="20210504 12:36:36.646" endtime="20210504 12:36:36.647"></status>
+</kw>
+<msg timestamp="20210504 12:36:36.647" level="WARN">Accessing variable items using '&amp;{PASS}[${ID}]' syntax is deprecated. Use '${PASS}[${ID}]' instead.</msg>
+<msg timestamp="20210504 12:36:36.650" level="INFO">${pass} = StrangerThings2016</msg>
+<status status="PASS" starttime="20210504 12:36:36.621" endtime="20210504 12:36:36.650"></status>
+</kw>
+<kw name="Login to Microsoft" library="resource">
+<arguments>
+<arg>${role_email}</arg>
+<arg>${pass}</arg>
+</arguments>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>.25</arg>
+</arguments>
+<status status="PASS" starttime="20210504 12:36:36.651" endtime="20210504 12:36:36.652"></status>
+</kw>
+<kw name="Set Log Level" library="BuiltIn">
+<doc>Sets the log threshold to the specified level and returns the old level.</doc>
+<arguments>
+<arg>NONE</arg>
+</arguments>
+<status status="PASS" starttime="20210504 12:36:36.652" endtime="20210504 12:36:36.653"></status>
+</kw>
+<kw name="Fetch From Right" library="String">
+<doc>Returns contents of the ``string`` after the last occurrence of ``marker``.</doc>
+<arguments>
+<arg>${username}</arg>
+<arg>@</arg>
+</arguments>
+<assign>
+<var>${na_username}</var>
+</assign>
+<status status="PASS" starttime="20210504 12:36:36.653" endtime="20210504 12:36:36.654"></status>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${na_username}</arg>
+</arguments>
+<status status="PASS" starttime="20210504 12:36:36.654" endtime="20210504 12:36:36.655"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${MSL USERNAME Input}</arg>
+<arg>5s</arg>
+</arguments>
+<status status="PASS" starttime="20210504 12:36:36.656" endtime="20210504 12:36:36.919"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${MSL USERNAME Input}</arg>
+<arg>${username}</arg>
+</arguments>
+<status status="PASS" starttime="20210504 12:36:36.919" endtime="20210504 12:36:37.837"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${MSL NEXT Btn}</arg>
+</arguments>
+<status status="PASS" starttime="20210504 12:36:37.838" endtime="20210504 12:36:38.400"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5s</arg>
+</arguments>
+<status status="PASS" starttime="20210504 12:36:38.400" endtime="20210504 12:36:43.401"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${MSL PASSWORD Input}</arg>
+<arg>5s</arg>
+</arguments>
+<status status="PASS" starttime="20210504 12:36:43.402" endtime="20210504 12:36:43.665"></status>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${MSL PASSWORD Input}</arg>
+<arg>${pass}</arg>
+</arguments>
+<status status="PASS" starttime="20210504 12:36:43.666" endtime="20210504 12:36:44.518"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${MSL SIGN IN Btn}</arg>
+</arguments>
+<status status="PASS" starttime="20210504 12:36:44.519" endtime="20210504 12:36:45.754"></status>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<arguments>
+<arg>Run Keyword If</arg>
+<arg>'${BROWSER.upper()}'=='CHROME'</arg>
+<arg>Wait Until Page Contains Element</arg>
+<arg>//input[@value='Yes']</arg>
+<arg>30s</arg>
+</arguments>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${BROWSER.upper()}'=='CHROME'</arg>
+<arg>Wait Until Page Contains Element</arg>
+<arg>//input[@value='Yes']</arg>
+<arg>30s</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>//input[@value='Yes']</arg>
+<arg>30s</arg>
+</arguments>
+<status status="PASS" starttime="20210504 12:36:45.757" endtime="20210504 12:36:47.428"></status>
+</kw>
+<status status="PASS" starttime="20210504 12:36:45.756" endtime="20210504 12:36:47.428"></status>
+</kw>
+<status status="PASS" starttime="20210504 12:36:45.755" endtime="20210504 12:36:47.428"></status>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<arguments>
+<arg>Run Keyword If</arg>
+<arg>'${BROWSER.upper()}'=='CHROME'</arg>
+<arg>Click Element</arg>
+<arg>//input[@value='Yes']</arg>
+</arguments>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${BROWSER.upper()}'=='CHROME'</arg>
+<arg>Click Element</arg>
+<arg>//input[@value='Yes']</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>//input[@value='Yes']</arg>
+</arguments>
+<status status="PASS" starttime="20210504 12:36:47.432" endtime="20210504 12:36:57.731"></status>
+</kw>
+<status status="PASS" starttime="20210504 12:36:47.430" endtime="20210504 12:36:57.731"></status>
+</kw>
+<status status="PASS" starttime="20210504 12:36:47.429" endtime="20210504 12:36:57.731"></status>
+</kw>
+<kw name="Set Log Level" library="BuiltIn">
+<doc>Sets the log threshold to the specified level and returns the old level.</doc>
+<arguments>
+<arg>INFO</arg>
+</arguments>
+<msg timestamp="20210504 12:36:57.733" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20210504 12:36:57.732" endtime="20210504 12:36:57.733"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" starttime="20210504 12:36:57.734" endtime="20210504 12:36:57.735"></status>
+</kw>
+<status status="PASS" starttime="20210504 12:36:36.650" endtime="20210504 12:36:57.735"></status>
+</kw>
+<status status="PASS" starttime="20210504 12:36:07.844" endtime="20210504 12:36:57.736"></status>
+</kw>
+<kw name="Create a Draft New Shell" library="resource">
+<arguments>
+<arg>${iManage_Shell_Data}</arg>
+<arg>TC101</arg>
+</arguments>
+<assign>
+<var>${DraftShellName_S1}</var>
+<var>${draft_Data_dict_S1}</var>
+</assign>
+<kw name="Get Shell Test Data and Element Locators" library="Keyword_Library_Shell">
+<doc>This keyword creates a test data dictionary and sets up dynamic element locators.
+The keyword accepts 2 arguments: datasheet location and test cases number
+which it uses to select the correct data row to read from</doc>
+<arguments>
+<arg>${Data_File}</arg>
+<arg>${File_row}</arg>
+</arguments>
+<assign>
+<var>${shell_dict}</var>
+</assign>
+<kw name="Set Log Level" library="BuiltIn">
+<doc>Sets the log threshold to the specified level and returns the old level.</doc>
+<arguments>
+<arg>NONE</arg>
+</arguments>
+<status status="PASS" starttime="20210504 12:36:57.742" endtime="20210504 12:36:57.743"></status>
+</kw>
+<kw name="Get Data From CSV File" library="resource">
+<doc>This keyword creates a data dictionary from a given line in a CSV file. Requires a valid datafile location and a test case number to execute.
+The keyword will fail if no datafile path is given. The test case number defaults to EMPTY if a test case number is not given and the will exit from the
+keyword without a failure. This is to accomadate the use of this keyword for data seeding activities.
+Step 1) Evaluates the arguments and will exit if TC# is missing
+Step 2) Reads the entire CSV file into memory as a list
+Step 3) Sets the data read row variable based on the given TC#
+Step 4) Gets the first row (index 0) from the list which are the column headers which will be used for the data dictionary keys
+Step 5) Gets the data from the given read row which will be used for the data dictionary values
+Step 6) Loops throught the length of the list and the key:value pairs to a data dictionary
+Returns the data dictionary
+NOTE: this needs to be updated to return an error msg if the given TC# is not found. Currently it will not fail and return the data from the last line of
+data file.</doc>
+<arguments>
+<arg>${datasheet}</arg>
+<arg>TC#</arg>
+<arg>${tcnum}</arg>
+</arguments>
+<assign>
+<var>${shell_dict}</var>
+</assign>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${TestCaseNum}'=='${empty}'</arg>
+<arg>Log</arg>
+<arg>ERA Data Dictionary is empty. Returning from Keyword</arg>
+</arguments>
+<status status="PASS" starttime="20210504 12:36:57.746" endtime="20210504 12:36:57.747"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${TestCaseNum}'=='${empty}'</arg>
+<arg>Return From Keyword</arg>
+</arguments>
+<status status="PASS" starttime="20210504 12:36:57.748" endtime="20210504 12:36:57.749"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${Key}'=='${empty}'</arg>
+<arg>Log</arg>
+<arg>ERA Data Dictionary Key is empty. Returning from Keyword</arg>
+</arguments>
+<status status="PASS" starttime="20210504 12:36:57.750" endtime="20210504 12:36:57.751"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${Key}'=='${empty}'</arg>
+<arg>Return From Keyword</arg>
+</arguments>
+<status status="PASS" starttime="20210504 12:36:57.751" endtime="20210504 12:36:57.752"></status>
+</kw>
+<kw name="Read Csv As Dictionary" library="CSVLib">
+<arguments>
+<arg>${datafile}</arg>
+<arg>${Key}</arg>
+<arg>${TestCaseNum}</arg>
+</arguments>
+<assign>
+<var>${dict}</var>
+</assign>
+<status status="PASS" starttime="20210504 12:36:57.753" endtime="20210504 12:36:57.779"></status>
+</kw>
+<status status="PASS" starttime="20210504 12:36:57.744" endtime="20210504 12:36:57.780"></status>
+</kw>
+<kw name="Get TimeStamp" library="resource">
+<doc>This keyword returns a timestamp variable. The main purpose is to append to Shell and ERA names to avoid duplication.</doc>
+<assign>
+<var>${t}</var>
+</assign>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>int(time.time())</arg>
+<arg>time</arg>
+</arguments>
+<assign>
+<var>${timestamp}</var>
+</assign>
+<status status="PASS" starttime="20210504 12:36:57.782" endtime="20210504 12:36:57.782"></status>
+</kw>
+<status status="PASS" starttime="20210504 12:36:57.781" endtime="20210504 12:36:57.784"></status>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${t}</arg>
+</arguments>
+<status status="PASS" starttime="20210504 12:36:57.784" endtime="20210504 12:36:57.786"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${shell_dict["Opp/EngName"]}'!=''</arg>
+<arg>Set To Dictionary</arg>
+<arg>${shell_dict}</arg>
+<arg>Opp/EngName</arg>
+<arg>${shell_dict["Opp/EngName"]} ${t}</arg>
+</arguments>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${shell_dict}</arg>
+<arg>Opp/EngName</arg>
+<arg>${shell_dict["Opp/EngName"]} ${t}</arg>
+</arguments>
+<status status="PASS" starttime="20210504 12:36:57.786" endtime="20210504 12:36:57.788"></status>
+</kw>
+<status status="PASS" starttime="20210504 12:36:57.786" endtime="20210504 12:36:57.788"></status>
+</kw>
+<kw name="Set Shell Name Locators" library="locators">
+<arguments>
+<arg>${shell_dict}</arg>
+</arguments>
+<kw name="Log Dictionary" library="Collections">
+<doc>Logs the size and contents of the ``dictionary`` using given ``level``.</doc>
+<arguments>
+<arg>${data_dict}</arg>
+</arguments>
+<status status="PASS" starttime="20210504 12:36:57.790" endtime="20210504 12:36:57.791"></status>
+</kw>
+<kw name="Set Log Level" library="BuiltIn">
+<doc>Sets the log threshold to the specified level and returns the old level.</doc>
+<arguments>
+<arg>NONE</arg>
+</arguments>
+<status status="PASS" starttime="20210504 12:36:57.793" endtime="20210504 12:36:57.794"></status>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${OPPMD SELECT NAME}</arg>
+<arg>//td[text()='${data_dict["OppMD"]}']</arg>
+</arguments>
+<status status="PASS" starttime="20210504 12:36:57.794" endtime="20210504 12:36:57.822"></status>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${OPPOWNER SELECT NAME}</arg>
+<arg>//td[text()='${data_dict["OppOwner"]}']</arg>
+</arguments>
+<status status="PASS" starttime="20210504 12:36:57.822" endtime="20210504 12:36:57.839"></status>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${EMD SELECT NAME}</arg>
+<arg>//td[text()='${data_dict["EMD"]}']</arg>
+</arguments>
+<status status="PASS" starttime="20210504 12:36:57.841" endtime="20210504 12:36:57.859"></status>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${EM SELECT NAME}</arg>
+<arg>//td[text()='${data_dict["EM"]}']</arg>
+</arguments>
+<status status="PASS" starttime="20210504 12:36:57.859" endtime="20210504 12:36:57.889"></status>
+</kw>
+<kw name="Set Log Level" library="BuiltIn">
+<doc>Sets the log threshold to the specified level and returns the old level.</doc>
+<arguments>
+<arg>INFO</arg>
+</arguments>
+<msg timestamp="20210504 12:36:57.890" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20210504 12:36:57.889" endtime="20210504 12:36:57.890"></status>
+</kw>
+<status status="PASS" starttime="20210504 12:36:57.788" endtime="20210504 12:36:57.891"></status>
+</kw>
+<kw name="Set Log Level" library="BuiltIn">
+<doc>Sets the log threshold to the specified level and returns the old level.</doc>
+<arguments>
+<arg>INFO</arg>
+</arguments>
+<msg timestamp="20210504 12:36:57.892" level="INFO">Log level changed from INFO to INFO.</msg>
+<status status="PASS" starttime="20210504 12:36:57.892" endtime="20210504 12:36:57.893"></status>
+</kw>
+<msg timestamp="20210504 12:36:57.894" level="INFO">${shell_dict} = {'TEST SCENARIO': 'Create Draft Opportunity with Minimum required data', 'existing': 'No', 'OpportunityType': 'Main', 'Opportunity Stage': '', 'Client Name': '', 'ClientID': '', 'PrimaryKeyBuyerContac...</msg>
+<status status="PASS" starttime="20210504 12:36:57.740" endtime="20210504 12:36:57.894"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${shell_dict}</arg>
+</arguments>
+<msg timestamp="20210504 12:36:57.896" level="INFO">${shell_dict} = {'TEST SCENARIO': 'Create Draft Opportunity with Minimum required data', 'existing': 'No', 'OpportunityType': 'Main', 'Opportunity Stage': '', 'Client Name': '', 'ClientID': '', 'PrimaryKeyBuyerContac...</msg>
+<status status="PASS" starttime="20210504 12:36:57.895" endtime="20210504 12:36:57.896"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Click My Opp and Engage Tile</arg>
+</arguments>
+<status status="PASS" starttime="20210504 12:36:57.897" endtime="20210504 12:36:57.897"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Wait Until Element Is Visible</arg>
+<arg>${CREATE NEW SHELL Btn}</arg>
+</arguments>
+<status status="PASS" starttime="20210504 12:36:57.898" endtime="20210504 12:36:57.898"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Sleep</arg>
+<arg>5s</arg>
+</arguments>
+<status status="PASS" starttime="20210504 12:36:57.899" endtime="20210504 12:36:57.899"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Click Button</arg>
+<arg>${CREATE NEW SHELL Btn}</arg>
+</arguments>
+<status status="PASS" starttime="20210504 12:36:57.900" endtime="20210504 12:36:57.900"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Check For Opp Button</arg>
+<arg>${shell_dict["existing"]}</arg>
+</arguments>
+<status status="PASS" starttime="20210504 12:36:57.901" endtime="20210504 12:36:57.901"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>${shell_dict_empty}=</arg>
+<arg>Get Shell Test Data and Element Locators</arg>
+<arg>${Data_File}</arg>
+<arg>TC000</arg>
+</arguments>
+<status status="PASS" starttime="20210504 12:36:57.902" endtime="20210504 12:36:57.902"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>New Opportunity Setup Form</arg>
+<arg>${shell_dict}</arg>
+<arg>${shell_dict_empty}</arg>
+</arguments>
+<status status="PASS" starttime="20210504 12:36:57.903" endtime="20210504 12:36:57.904"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Wait Until Page Contains Element</arg>
+<arg>${PERM MANAGE PERMISSIONS Btn}</arg>
+<arg>15s</arg>
+</arguments>
+<status status="PASS" starttime="20210504 12:36:57.904" endtime="20210504 12:36:57.905"></status>
+</kw>
+<msg timestamp="20210504 12:36:57.906" level="INFO">${DraftShellName_S1} = Test Draft Opportunity 1620112017</msg>
+<msg timestamp="20210504 12:36:57.906" level="INFO">${draft_Data_dict_S1} = {'TEST SCENARIO': 'Create Draft Opportunity with Minimum required data', 'existing': 'No', 'OpportunityType': 'Main', 'Opportunity Stage': '', 'Client Name': '', 'ClientID': '', 'PrimaryKeyBuyerContac...</msg>
+<status status="PASS" starttime="20210504 12:36:57.738" endtime="20210504 12:36:57.906"></status>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${DraftShellName_S1}</arg>
+</arguments>
+<msg timestamp="20210504 12:36:57.909" level="INFO">${DraftShellName_S1} = Test Draft Opportunity 1620112017</msg>
+<status status="PASS" starttime="20210504 12:36:57.908" endtime="20210504 12:36:57.909"></status>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${draft_Data_dict_S1}</arg>
+</arguments>
+<msg timestamp="20210504 12:36:57.911" level="INFO">${draft_Data_dict_S1} = {'TEST SCENARIO': 'Create Draft Opportunity with Minimum required data', 'existing': 'No', 'OpportunityType': 'Main', 'Opportunity Stage': '', 'Client Name': '', 'ClientID': '', 'PrimaryKeyBuyerContac...</msg>
+<status status="PASS" starttime="20210504 12:36:57.910" endtime="20210504 12:36:57.911"></status>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<arguments>
+<arg>${OPPORTUNITY STATUS BAR}</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210504 12:36:59.156" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-16.png"&gt;&lt;img src="selenium-screenshot-16.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210504 12:36:58.434" endtime="20210504 12:36:59.156"></status>
+</kw>
+<msg timestamp="20210504 12:36:59.190" level="FAIL">Element with locator '//div[@class='right progress-minimize-bar']' not found.</msg>
+<status status="FAIL" starttime="20210504 12:36:57.912" endtime="20210504 12:36:59.191"></status>
+</kw>
+<doc>Azure TC ID-</doc>
+<tags>
+<tag>Regression</tag>
+<tag>Smoke</tag>
+</tags>
+<status status="FAIL" starttime="20210504 12:36:07.830" endtime="20210504 12:36:59.192" critical="yes">Element with locator '//div[@class='right progress-minimize-bar']' not found.</status>
+</test>
+<test id="s1-t2" name="Shell is created successfully with all fields">
+<kw name="Open Shell From Filter List" library="Keyword_Library_Shell">
+<arguments>
+<arg>${DraftShellName_S1}</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${SHELL OPP/ENG FILTER input}</arg>
+<arg>30s</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210504 12:37:30.643" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-17.png"&gt;&lt;img src="selenium-screenshot-17.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210504 12:37:29.887" endtime="20210504 12:37:30.644"></status>
+</kw>
+<msg timestamp="20210504 12:37:30.646" level="FAIL">Element '//td[@aria-label="Column Shell Name, Filter cell"]//input' did not appear in 30 seconds.</msg>
+<status status="FAIL" starttime="20210504 12:36:59.196" endtime="20210504 12:37:30.647"></status>
+</kw>
+<status status="FAIL" starttime="20210504 12:36:59.195" endtime="20210504 12:37:30.647"></status>
+</kw>
+<doc>Azure TC ID- 18181</doc>
+<tags>
+<tag>Regression</tag>
+<tag>Smoke</tag>
+</tags>
+<status status="FAIL" starttime="20210504 12:36:59.194" endtime="20210504 12:37:30.649" critical="yes">Element '//td[@aria-label="Column Shell Name, Filter cell"]//input' did not appear in 30 seconds.</status>
+</test>
+<test id="s1-t3" name="Validate Assistant Fields on created shell">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5s</arg>
+</arguments>
+<msg timestamp="20210504 12:37:35.655" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20210504 12:37:30.654" endtime="20210504 12:37:35.655"></status>
+</kw>
+<kw name="Open iManage Assistant" library="Keyword_Library_Assistant">
+<doc>Keyword waits up to 30s for Hamburger icon to display then clicks the it. Checks is the
+assistant logo is displayed to confirm the assistant is open</doc>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>13s</arg>
+</arguments>
+<msg timestamp="20210504 12:37:48.661" level="INFO">Slept 13 seconds</msg>
+<status status="PASS" starttime="20210504 12:37:35.658" endtime="20210504 12:37:48.661"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${HAMBURGER Btn}</arg>
+<arg>30s</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210504 12:38:19.917" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-18.png"&gt;&lt;img src="selenium-screenshot-18.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210504 12:38:18.867" endtime="20210504 12:38:19.917"></status>
+</kw>
+<msg timestamp="20210504 12:38:19.919" level="FAIL">Element '//div[contains(@class, 'hamburger')]' did not appear in 30 seconds.</msg>
+<status status="FAIL" starttime="20210504 12:37:48.661" endtime="20210504 12:38:19.919"></status>
+</kw>
+<status status="FAIL" starttime="20210504 12:37:35.657" endtime="20210504 12:38:19.919"></status>
+</kw>
+<doc>Continuation Azure TC ID- 18181</doc>
+<tags>
+<tag>Regression</tag>
+<tag>Smoke</tag>
+</tags>
+<status status="FAIL" starttime="20210504 12:37:30.653" endtime="20210504 12:38:19.922" critical="yes">Element '//div[contains(@class, 'hamburger')]' did not appear in 30 seconds.</status>
+</test>
+<test id="s1-t4" name="Validate locking Rule for Client/Account for Standalone Shell">
+<kw name="Open Shell From Filter List" library="Keyword_Library_Shell">
+<arguments>
+<arg>${CreatedShellName_S1}</arg>
+</arguments>
+<msg timestamp="20210504 12:38:19.963" level="FAIL">Variable '${CreatedShellName_S1}' not found.</msg>
+<status status="FAIL" starttime="20210504 12:38:19.933" endtime="20210504 12:38:19.964"></status>
+</kw>
+<doc>Azure TC ID-20641</doc>
+<tags>
+<tag>Regression</tag>
+</tags>
+<status status="FAIL" starttime="20210504 12:38:19.929" endtime="20210504 12:38:19.969" critical="yes">Variable '${CreatedShellName_S1}' not found.</status>
+</test>
+<test id="s1-t5" name="ERA created from New Opp Shell Assistant in Draft Status">
+<kw name="Open iManage Assistant" library="Keyword_Library_Assistant">
+<doc>Keyword waits up to 30s for Hamburger icon to display then clicks the it. Checks is the
+assistant logo is displayed to confirm the assistant is open</doc>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>13s</arg>
+</arguments>
+<msg timestamp="20210504 12:38:32.981" level="INFO">Slept 13 seconds</msg>
+<status status="PASS" starttime="20210504 12:38:19.979" endtime="20210504 12:38:32.981"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${HAMBURGER Btn}</arg>
+<arg>30s</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210504 12:38:57.116" level="FAIL">WebDriverException: Message: chrome not reachable
+  (Session info: chrome=90.0.4430.93)
+</msg>
+<status status="FAIL" starttime="20210504 12:38:45.017" endtime="20210504 12:38:57.116"></status>
+</kw>
+<msg timestamp="20210504 12:38:57.116" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: WebDriverException: Message: chrome not reachable
+  (Session info: chrome=90.0.4430.93)
+</msg>
+<msg timestamp="20210504 12:38:57.120" level="FAIL">WebDriverException: Message: chrome not reachable
+  (Session info: chrome=90.0.4430.93)
+</msg>
+<status status="FAIL" starttime="20210504 12:38:32.982" endtime="20210504 12:38:57.120"></status>
+</kw>
+<status status="FAIL" starttime="20210504 12:38:19.977" endtime="20210504 12:38:57.120"></status>
+</kw>
+<doc>Azure TC ID- 18338</doc>
+<tags>
+<tag>Regression</tag>
+<tag>Smoke</tag>
+</tags>
+<status status="FAIL" starttime="20210504 12:38:19.973" endtime="20210504 12:38:57.120" critical="yes">WebDriverException: Message: chrome not reachable
+  (Session info: chrome=90.0.4430.93)
+</status>
+</test>
+<test id="s1-t6" name="Validate locking Rule for Client/Account for Standalone Shell + Draft ERA">
+<kw name="Open Shell From Filter List" library="Keyword_Library_Shell">
+<arguments>
+<arg>${CreatedShellName_S1}</arg>
+</arguments>
+<msg timestamp="20210504 12:38:57.153" level="FAIL">Variable '${CreatedShellName_S1}' not found.</msg>
+<status status="FAIL" starttime="20210504 12:38:57.126" endtime="20210504 12:38:57.153"></status>
+</kw>
+<doc>Azure TC ID-20642</doc>
+<tags>
+<tag>Regression</tag>
+</tags>
+<status status="FAIL" starttime="20210504 12:38:57.124" endtime="20210504 12:38:57.155" critical="yes">Variable '${CreatedShellName_S1}' not found.</status>
+</test>
+<test id="s1-t7" name="ERA created from New Opp Shell Asssitant in EMD Review Status">
+<kw name="From Shell Navigate to ${ASSIST ERA Link} further to ${ERA NAME}" library="resource">
+<msg timestamp="20210504 12:38:57.178" level="FAIL">Variable '${ERA NAME}' not found. Did you mean:
+    ${ERA Name_New}
+    ${ERA NAME Input}</msg>
+<status status="FAIL" starttime="20210504 12:38:57.159" endtime="20210504 12:38:57.178"></status>
+</kw>
+<doc>Azure TC ID- 18339</doc>
+<tags>
+<tag>Regression</tag>
+</tags>
+<status status="FAIL" starttime="20210504 12:38:57.158" endtime="20210504 12:38:57.180" critical="yes">Variable '${ERA NAME}' not found. Did you mean:
+    ${ERA Name_New}
+    ${ERA NAME Input}</status>
+</test>
+<test id="s1-t8" name="ERA created from New Opp Shell Asssitant in Approved Status">
+<kw name="Open ERA From Filter List" library="Keyword_Library_ERA">
+<arguments>
+<arg>${ERA NAME}</arg>
+<arg>Normal</arg>
+</arguments>
+<msg timestamp="20210504 12:38:57.214" level="FAIL">Variable '${ERA NAME}' not found. Did you mean:
+    ${ERA Name_New}
+    ${ERA NAME Input}</msg>
+<status status="FAIL" starttime="20210504 12:38:57.185" endtime="20210504 12:38:57.214"></status>
+</kw>
+<doc>Azure TC ID- 18341</doc>
+<tags>
+<tag>Regression</tag>
+</tags>
+<status status="FAIL" starttime="20210504 12:38:57.183" endtime="20210504 12:38:57.216" critical="yes">Variable '${ERA NAME}' not found. Did you mean:
+    ${ERA Name_New}
+    ${ERA NAME Input}</status>
+</test>
+<test id="s1-t9" name="Validate locking Rule for Client/Account for Standalone Shell + Approved Normal Rating ERA">
+<kw name="User Selects Different Client Name" library="Keyword_Library_Shell">
+<arguments>
+<arg>${shell_dict["Client Name2"]}</arg>
+<arg>${ErrorMsg_ApprovedERA}</arg>
+<arg>${shell_dict["existing"]}</arg>
+<arg>${shell_dict["PKB_Client2"]}</arg>
+</arguments>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<status status="PASS" starttime="20210504 12:38:57.224" endtime="20210504 12:38:57.225"></status>
+</kw>
+<kw name="Shell Select Client Name" library="Keyword_Library_Shell">
+<arguments>
+<arg>${Client_Name}</arg>
+<arg>${Client_Name}</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${ACCOUNT/CLIENT Input}</arg>
+</arguments>
+<msg timestamp="20210504 12:38:57.227" level="INFO">Clicking element '//input[@id='clientSelect']'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.
